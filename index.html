@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Desde 27 de Abril</title>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f5f3ef;
+      font-family: 'Dancing Script', cursive;
+      color: #3c3c3c;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 800px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.8em;
+      color: #7b5e57;
+      margin-bottom: 30px;
+    }
+
+    .texto {
+      font-size: 1.6em;
+      line-height: 1.8;
+      color: #5b4a46;
+      margin-bottom: 40px;
+    }
+
+    .contador {
+      font-size: 1.5em;
+      color: #4e4e4e;
+      background-color: #f0ece9;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 40px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+
+    .mensagem {
+      font-size: 1.5em;
+      color: #5a4b45;
+      margin-bottom: 20px;
+    }
+
+    footer {
+      margin-top: 50px;
+      font-size: 1em;
+      color: #999;
+      font-family: sans-serif;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 20px 10px;
+      }
+
+      .texto, .mensagem, .contador {
+        font-size: 1.3em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Oi, meu Xuxuzinho 🤍</h1>
+
+    <div class="texto">
+      <p>Te amar virou meu hábito favorito.</p>
+      <p>Esse espaço é só um jeito simples de mostrar o quanto você é especial pra mim e pra dizer, de um jeito diferente, que amar você é o melhor presente da minha vida.</p>
+    </div>
+
+    <div class="contador" id="contador">
+      Já são [0 dias, 0 horas, 0 minutos, 0 segundos] vivendo o tipo de amor que muitos sonham em sentir só uma vez.
+    </div>
+
+    <div class="mensagem">
+      <p>"Eu faria tudo de novo, do mesmo jeito, só pra chegar até você."</p>
+    </div>
+
+    <div class="mensagem">
+      <p>"As long as I’m here, no one can hurt you."</p>
+    </div>
+
+    <div class="mensagem">
+    </div>
+
+    <footer>
+      Infinitamente, intensamente, inevitavelmente, incondicionalmente e inteiramente eu amo você, simples assim 🤍.
+    </footer>
+  </div>
+
+  <script>
+    function atualizarContador() {
+      const inicio = new Date("2025-04-27T00:00:00");
+      const agora = new Date();
+      const diff = agora - inicio;
+
+      const segundos = Math.floor(diff / 1000);
+      const minutos = Math.floor(segundos / 60);
+      const horas = Math.floor(minutos / 60);
+      const dias = Math.floor(horas / 24);
+
+      const horasRestantes = horas % 24;
+      const minutosRestantes = minutos % 60;
+      const segundosRestantes = segundos % 60;
+
+      const contador = document.getElementById("contador");
+      contador.textContent = `Já são [${dias} dias, ${horasRestantes} horas, ${minutosRestantes} minutos, ${segundosRestantes} segundos] vivendo o tipo de amor que muitos sonham em sentir só uma vez.`;
+    }
+
+    setInterval(atualizarContador, 1000);
+    atualizarContador();
+  </script>
+</body>
+</html>
